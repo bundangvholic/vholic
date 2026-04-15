@@ -8,7 +8,15 @@ let currentYear = new Date().getFullYear();
 
 /* ===== 게스트 데이터 (여기만 수정하면 됨) ===== */
 const guestData = {
+  
   "2026-3-29": { male: "1/3", female: "1/3" },
+  "2026-4-19": { text: "운동X"},
+  "2026-4-21": { text: "레슨🏐"},
+  "2026-4-25": { text1: "제천<br>대회"},
+  "2026-4-26": { text1: "제천<br>대회"},
+  "2026-5-2": { text1: "용인<br>대회"},
+  "2026-5-3": { text1: "용인<br>대회"},
+
 };
 
 function renderCalendar(year, month) {
@@ -55,6 +63,9 @@ function renderCalendar(year, month) {
   
     const dateKey = `${year}-${month + 1}-${d}`;
     const data = guestData[dateKey];
+
+    if (dateKey === "2026-4-25" || dateKey === "2026-4-26") {
+        dayEl.classList.add("game-day");}
   
     /* 오늘 날짜 객체 */
     const cellDate = new Date(year, month, d);
@@ -79,12 +90,17 @@ function renderCalendar(year, month) {
     let statusHTML = "";
   
     /* 🔥 과거 날짜는 내용 안 보여줌 */
-    if (data && !isPast) {
+    if (data) {
       if (data.text) {
         statusHTML = `<div class="status-note">${data.text}</div>`;
-      } else if (data.male === "full" && data.female === "full") {
+      }
+      else if(data.text1){
+        statusHTML = `<div class="game-day">${data.text1}</div>`;
+      }
+      else if (data.male === "full" && data.female === "full") {
         statusHTML = `<div class="status-closed">마감</div>`;
-      } else {
+      } 
+      else {
         if (data.male) {
           statusHTML += `<div class="status-male">
             ${data.male === "full" ? "마감" : data.male}

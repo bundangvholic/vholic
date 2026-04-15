@@ -199,6 +199,7 @@ body {
 
 /* 날짜 숫자 */
 .calendar-day .date {
+  color: black;
   font-weight: 700;
   font-size: 13px;
   margin-bottom: 2px;
@@ -230,9 +231,17 @@ body {
 }
 
 /* ===== 원하는 텍스트 표시 (운동X 등) ===== */
+/* 기본 설정 #4b032b / #2f2f2f / #1f2643 */
 
 .status-note {
   color: #999;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.game-day {
+  color: #88255b; 
+  /* background-color: #50576e;*/
   font-weight: 700;
   font-size: 11px;
 }
