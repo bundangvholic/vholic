@@ -138,6 +138,7 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-bottom: 6px;
+  gap: 6px;
 }
 
 .week-day {
@@ -145,6 +146,11 @@ body {
   font-size: 12px;
   font-weight: 700;
   color: #777;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 4px 4px;
+
 }
 
 /* ===== 범례 ===== */
@@ -240,8 +246,8 @@ body {
 }
 
 .game-day {
-  color: #88255b; 
-  /* background-color: #50576e;*/
+  color: #930754; 
+  /* border-color: #930754; */
   font-weight: 700;
   font-size: 11px;
 }
